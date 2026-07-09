@@ -1,124 +1,262 @@
-# Sample AEM project template
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+# AssetSphere
 
-## Modules
+> Enterprise Digital Asset Management (DAM) application built using Adobe Experience Manager (AEM).
 
-The main parts of the template are:
+---
 
-* [core:](core/README.md) Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* [it.tests:](it.tests/README.md) Java based integration tests
-* [ui.apps:](ui.apps/README.md) contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, and templates
-* [ui.content:](ui.content/README.md) contains sample content using the components from the ui.apps
-* ui.config: contains runmode specific OSGi configs for the project
-* [ui.frontend:](ui.frontend.general/README.md) an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
-* [ui.tests:](ui.tests/README.md) Cypress based UI tests (for other frameworks check [aem-test-samples](https://github.com/adobe/aem-test-samples) repository
-* all: a single content package that embeds all of the compiled modules (bundles and content packages) including any vendor dependencies
-* analyse: this module runs analysis on the project which provides additional validation for deploying into AEMaaCS
+## Project Overview
 
-## How to build
+AssetSphere is an enterprise-style Digital Asset Management application developed using Adobe Experience Manager (AEM). It enables organizations to upload, organize, search, manage, and publish digital assets through reusable AEM components and enterprise development practices.
 
-To build all the modules run in the project root directory the following command with Maven 3:
+---
 
-    mvn clean install
+## Project Objectives
 
-To build all the modules and deploy the `all` package to a local instance of AEM, run in the project root directory the following command:
+- Build an enterprise-ready AEM application.
+- Implement reusable AEM components.
+- Enable content authors to manage content without developer intervention.
+- Demonstrate Sling Models, Servlets, OSGi Services, Workflows, and Schedulers.
+- Follow Adobe AEM best practices.
 
-    mvn clean install -PautoInstallSinglePackage
+---
 
-Or to deploy it to a publish instance, run
+## Technology Stack
 
-    mvn clean install -PautoInstallSinglePackagePublish
+- Adobe Experience Manager (AEM)
+- Java
+- Apache Sling
+- OSGi
+- HTL (Sightly)
+- Granite UI
+- Coral UI
+- Maven
+- Git
+- HTML
+- CSS
+- JavaScript
 
-Or alternatively
+---
 
-    mvn clean install -PautoInstallSinglePackage -Daem.port=4503
+## Project Modules
 
-Or to deploy only the bundle to the author, run
+| Module | Description |
+|---------|-------------|
+| core | Java bundle containing Sling Models, OSGi Services, Servlets, Listeners, Schedulers, Workflow Processes, and business logic. |
+| ui.apps | Components, Editable Templates, Client Libraries, Dialogs, Policies, and `/apps` content. |
+| ui.content | Initial content, sample pages, and repository content. |
+| ui.config | Run mode-specific OSGi configurations. |
+| dispatcher | Dispatcher configuration for caching and request filtering. |
+| all | Deployable package containing all modules. |
+| it.tests | Integration tests for AEM APIs. |
+| ui.tests | Cypress-based UI tests. |
+| analyse | Static analysis for AEM as a Cloud Service compatibility. |
+| ui.frontend *(optional)* | Frontend build using Webpack, React, Angular, or other frameworks. |
 
-    mvn clean install -PautoInstallBundle
+---
 
-Or to deploy only a single content package, run in the sub-module directory (i.e `ui.apps`)
+## Features
 
-    mvn clean install -PautoInstallPackage
+- Editable Templates
+- Responsive Layout
+- Header & Footer
+- Navigation
+- Hero Banner
+- Asset Upload
+- Asset Search
+- Asset Cards
+- Metadata Management
+- Asset Download
+- Sling Models
+- Servlets
+- OSGi Services
+- Scheduler
+- Workflow
+- Client Libraries
 
-## Documentation
+---
 
-The build process also generates documentation in the form of README.md files in each module directory for easy reference. Depending on the options you select at build time, the content may be customized to your project.
+## Project Structure
+
+```
+
+assetsphere/
+│
+├── core
+├── ui.apps
+├── ui.content
+├── ui.config
+├── dispatcher
+├── all
+├── it.tests
+├── ui.tests
+└── pom.xml
+
+````
+
+---
+
+## Build & Deployment
+
+### Build all modules
+
+```bash
+mvn clean install
+````
+
+### Install complete project on Author
+
+```bash
+mvn clean install -PautoInstallSinglePackage
+```
+
+### Install complete project on Publish
+
+```bash
+mvn clean install -PautoInstallSinglePackagePublish
+```
+
+### Install on a custom port
+
+```bash
+mvn clean install -PautoInstallSinglePackage -Daem.port=4503
+```
+
+### Install only the bundle
+
+```bash
+mvn clean install -PautoInstallBundle
+```
+
+### Install only a content package
+
+```bash
+mvn clean install -PautoInstallPackage
+```
+
+---
+
+## Development Workflow
+
+```
+
+main
+│
+└── develop
+├── feature/header
+├── feature/footer
+├── feature/templates
+├── feature/search
+├── feature/workflow
+└── feature/scheduler
+
+```
+
+* All development is done in `feature/*` branches.
+* Feature branches are merged into `develop` through Pull Requests.
+* Stable releases are merged into `main`.
+
+---
 
 ## Testing
 
-There are three levels of testing contained in the project:
+### Unit Tests
 
-### Unit tests
+```bash
+mvn clean test
+```
 
-This show-cases classic unit testing of the code contained in the bundle. To
-test, execute:
+### Integration Tests
 
-    mvn clean test
+```bash
+mvn clean verify -Plocal
+```
 
-### Integration tests
+Default configuration:
 
-This allows running integration tests that exercise the capabilities of AEM via
-HTTP calls to its API. To run the integration tests, run:
+| Property    | Default                                        |
+| ----------- | ---------------------------------------------- |
+| Author URL  | [http://localhost:4502](http://localhost:4502) |
+| Publish URL | [http://localhost:4503](http://localhost:4503) |
+| Username    | admin                                          |
+| Password    | admin                                          |
 
-    mvn clean verify -Plocal
+Integration tests should use classes ending with `*IT.java`.
 
-Test classes must be saved in the `src/main/java` directory (or any of its
-subdirectories), and must be contained in files matching the pattern `*IT.java`.
-
-The configuration provides sensible defaults for a typical local installation of
-AEM. If you want to point the integration tests to different AEM author and
-publish instances, you can use the following system properties via Maven's `-D`
-flag.
-
-| Property              | Description                                         | Default value           |
-|-----------------------|-----------------------------------------------------|-------------------------|
-| `it.author.url`       | URL of the author instance                          | `http://localhost:4502` |
-| `it.author.user`      | Admin user for the author instance                  | `admin`                 |
-| `it.author.password`  | Password of the admin user for the author instance  | `admin`                 |
-| `it.publish.url`      | URL of the publish instance                         | `http://localhost:4503` |
-| `it.publish.user`     | Admin user for the publish instance                 | `admin`                 |
-| `it.publish.password` | Password of the admin user for the publish instance | `admin`                 |
-
-The integration tests in this archetype use the [AEM Testing
-Clients](https://github.com/adobe/aem-testing-clients) and showcase some
-recommended [best
-practices](https://github.com/adobe/aem-testing-clients/wiki/Best-practices) to
-be put in use when writing integration tests for AEM.
+---
 
 ## Static Analysis
 
-The `analyse` module performs static analysis on the project for deploying into AEMaaCS. It is automatically
-run when executing
+Run:
 
-    mvn clean install
+```bash
+mvn clean install
+```
 
-from the project root directory. Additional information about this analysis and how to further configure it
-can be found here https://github.com/adobe/aemanalyser-maven-plugin
+The `analyse` module validates the project for AEM as a Cloud Service deployment.
 
-### UI tests
+---
 
-They will test the UI layer of your AEM application using Cypress framework.
+## Client Libraries
 
-Check README file in `ui.tests` module for more details.
+Frontend assets are delivered using AEM Client Libraries.
 
-Examples of UI tests in different frameworks can be found here: https://github.com/adobe/aem-test-samples
+Typical structure:
 
-## ClientLibs
+```
 
-The frontend module is made available using an [AEM ClientLib](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/clientlibs.html). When executing the NPM build script, the app is built and the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package takes the resulting build output and transforms it into such a ClientLib.
+css/
+css.txt
 
-A ClientLib will consist of the following files and directories:
+js/
+js.txt
 
-- `css/`: CSS files which can be requested in the HTML
-- `css.txt` (tells AEM the order and names of files in `css/` so they can be merged)
-- `js/`: JavaScript files which can be requested in the HTML
-- `js.txt` (tells AEM the order and names of files in `js/` so they can be merged
-- `resources/`: Source maps, non-entrypoint code chunks (resulting from code splitting), static assets (e.g. icons), etc.
+resources/
 
-## Maven settings
+```
 
-The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
+---
 
-    http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
+## Getting Started
+
+Clone:
+
+```bash
+git clone <repository-url>
+```
+
+Navigate:
+
+```bash
+cd assetsphere
+```
+
+Build:
+
+```bash
+mvn clean install -PautoInstallSinglePackage
+```
+
+---
+
+## Team
+
+| Member  | Responsibilities                                                |
+| ------- | --------------------------------------------------------------- |
+| Partner | Project Setup, Page Component, Header, Navigation               |
+| You     | Editable Templates, Footer, Client Libraries, Search, Scheduler |
+
+---
+
+## Useful References
+
+* Adobe Experience Manager Documentation
+* AEM Maven Archetype
+* AEM Testing Clients
+* AEM Client Libraries Documentation
+
+---
+
+## License
+
+This project is intended for learning and portfolio purposes.
