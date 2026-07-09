@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/assetsphere" mode="merge"/>
+    <filter root="/content/assetsphere" mode="merge"/>
+    <filter root="/content/dam/assetsphere" mode="merge">
+        <exclude pattern="/content/dam/assetsphere(/.*)?"/>
+        <include pattern="/content/dam/assetsphere/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/assetsphere/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/assetsphere" mode="merge"/>
+</workspaceFilter>

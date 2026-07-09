@@ -1,0 +1,40 @@
+.assetsphere-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2937;
+    padding: 15px 30px;
+}
+
+.assetsphere-header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.assetsphere-header img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.assetsphere-header h1 {
+    color: white;
+    margin: 0;
+    font-size: 28px;
+}
+
+.assetsphere-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.assetsphere-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.assetsphere-nav a:hover {
+    color: #38bdf8;
+}
