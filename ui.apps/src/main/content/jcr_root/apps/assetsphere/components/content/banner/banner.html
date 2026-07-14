@@ -1,0 +1,19 @@
+<div class="banner">
+    <p>${properties.bannerImage}</p>
+
+<img class="banner-image"
+     src="${properties.bannerImage @ context='uri'}"
+     alt="Banner"/>
+
+    <div class="banner-overlay">
+        <h1>${properties.heading}</h1>
+
+        <p>${properties.description}</p>
+
+        <div class="banner-buttons">
+            <button>${properties.buttonOne}</button>
+            <button>${properties.buttonTwo}</button>
+        </div>
+    </div>
+
+</div>

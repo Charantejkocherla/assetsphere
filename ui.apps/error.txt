@@ -1,0 +1,28 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.spheredigital:assetsphere.ui.apps >----------------
+[INFO] Building AssetSphere - UI apps 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------[ content-package ]---------------------------
+[INFO] 
+[INFO] --- clean:3.0.0:clean (default-clean) @ assetsphere.ui.apps ---
+[INFO] Deleting C:\Users\Dudes\Desktop\aem-project\assetsphere\ui.apps\target
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ assetsphere.ui.apps ---
+[INFO] 
+[INFO] --- htl:2.0.2-1.4.0:validate (validate-htl-scripts) @ assetsphere.ui.apps ---
+[ERROR] C:\Users\Dudes\Desktop\aem-project\assetsphere\ui.apps\src\main\content\jcr_root\apps\assetsphere\components\content\banner\banner.html [2:58]: ${'background-image:url(' + properties.bannerImage + ')' @ context='styleString'}: token recognition error at: '+'
+[INFO] Processed 8 files in 2016ms
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.781 s
+[INFO] Finished at: 2026-07-14T11:34:06+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.sling:htl-maven-plugin:2.0.2-1.4.0:validate (validate-htl-scripts) on project assetsphere.ui.apps: Please check the reported syntax errors. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
