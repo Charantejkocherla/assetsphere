@@ -1,19 +1,19 @@
-<div class="banner">
-    <p>${properties.bannerImage}</p>
+<sly data-sly-use.Banner = "com.spheredigital.assetsphere.core.models.BannerModel">
+	<div class="banner">
+	    <p>${Banner.bannerImage}</p>
 
-<img class="banner-image"
-     src="${properties.bannerImage @ context='uri'}"
-     alt="Banner"/>
+	<img class="banner-image"
+	     src="${Banner.bannerImage @ context='uri'}"
+	     alt="Banner"/>
 
-    <div class="banner-overlay">
-        <h1>${properties.heading}</h1>
+	    <div class="banner-overlay">
+	        <h1>${Banner.heading}</h1>
 
-        <p>${properties.description}</p>
+	        <p>${Banner.description}</p>
 
-        <div class="banner-buttons">
-            <button>${properties.buttonOne}</button>
-            <button>${properties.buttonTwo}</button>
-        </div>
-    </div>
-
-</div>
+	        <div class="banner-buttons">
+	            <button>${Banner.buttonOne}</button>
+	            <button>${Banner.buttonTwo}</button>
+	        </div>
+	    </div>
+</sly>
