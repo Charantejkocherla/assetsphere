@@ -1,12 +1,14 @@
-<div class="assetsphere-header">
-    <img src="${properties.logoPath}" alt="Logo"/>
-    <h1>${properties.headerTitle}</h1>
+<sly data-sly-use.Header = "com.spheredigital.assetsphere.core.models.HeaderModel">
+	<div class="assetsphere-header">
+	    <img src="${Header.logoPath}" alt="Logo"/>
+	    <h1>${Header.headerTitle}</h1>
 
-      <nav class="assetsphere-nav">
-        <a href="#">Home</a>
-        <a href="#">Assets</a>
-        <a href="#">Upload</a>
-        <a href="#">Reports</a>
-        <a href="#">Admin</a>
-    </nav>
-</div>
+	      <nav class="assetsphere-nav">
+	        <a href="#">Home</a>
+	        <a href="#">Assets</a>
+	        <a href="#">Upload</a>
+	        <a href="#">Reports</a>
+	        <a href="#">Admin</a>
+	    </nav>
+	</div>
+</sly>
