@@ -1,8 +1,10 @@
 #base=css
 
-site.css
 search.css
 categories.css
 banner.css
 dashboardcards.css
 recentassets.css
+features.css
+cta.css
+footer.css
