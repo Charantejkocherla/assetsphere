@@ -1,10 +1,7 @@
-<sly data-sly-use.Banner = "com.spheredigital.assetsphere.core.models.BannerModel">
-	<div class="banner">
-	    <p>${Banner.bannerImage}</p>
-
-	<img class="banner-image"
-	     src="${Banner.bannerImage @ context='uri'}"
-	     alt="Banner"/>
+<div class="banner">
+<img class="banner-image"
+     src="${properties.bannerImage @ context='uri'}"
+     alt="Banner"/>
 
 	    <div class="banner-overlay">
 	        <h1>${Banner.heading}</h1>

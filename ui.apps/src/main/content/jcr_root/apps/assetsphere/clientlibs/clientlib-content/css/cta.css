@@ -1,0 +1,54 @@
+.cta-section{
+    width:90%;
+    margin:80px auto;
+    padding:80px 40px;
+    background:linear-gradient(135deg,#0d6efd,#003f88);
+    border-radius:20px;
+    text-align:center;
+    color:#fff;
+}
+
+.cta-section h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.cta-section p{
+    max-width:700px;
+    margin:0 auto 35px;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.cta-section button{
+    padding:16px 40px;
+    background:#fff;
+    color:#0d6efd;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cta-section button:hover{
+    transform:translateY(-3px);
+    background:#f4f4f4;
+}
+
+@media(max-width:768px){
+
+.cta-section{
+    padding:50px 20px;
+}
+
+.cta-section h2{
+    font-size:32px;
+}
+
+.cta-section p{
+    font-size:16px;
+}
+
+}
