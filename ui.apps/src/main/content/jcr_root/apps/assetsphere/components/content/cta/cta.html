@@ -1,9 +1,13 @@
-<div class="cta-section">
+<sly data-sly-use.CtaMod="com.spheredigital.assetsphere.core.models.CtaModel">
 
-    <h2>${properties.heading}</h2>
+    <div class="cta-section">
 
-    <p>${properties.description}</p>
+        <h2>${CtaMod.heading}</h2>
 
-    <button>${properties.buttonText}</button>
+        <p>${CtaMod.description}</p>
 
-</div>
+        <button>${CtaMod.buttonText}</button>
+
+    </div>
+
+</sly>

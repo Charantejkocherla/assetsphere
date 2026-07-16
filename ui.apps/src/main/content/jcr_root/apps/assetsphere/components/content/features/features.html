@@ -1,41 +1,44 @@
-<div class="features">
+<sly data-sly-use.featuresMod="com.spheredigital.assetsphere.core.models.FeaturesModel">
 
-    <h2>${properties.heading}</h2>
+    <div class="features">
 
-    <p>${properties.description}</p>
+        <h2>${featuresMod.heading}</h2>
 
-    <div class="feature-grid">
+        <p>${featuresMod.description}</p>
 
-        <div class="feature-card">
-            <div class="icon">🔒</div>
-            <h3>Secure Storage</h3>
-        </div>
+        <div class="feature-grid">
 
-        <div class="feature-card">
-            <div class="icon">⚡</div>
-            <h3>Fast Search</h3>
-        </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Secure Storage</h3>
+            </div>
 
-        <div class="feature-card">
-            <div class="icon">👥</div>
-            <h3>Role-Based Access</h3>
-        </div>
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>Fast Search</h3>
+            </div>
 
-        <div class="feature-card">
-            <div class="icon">🕒</div>
-            <h3>Version Control</h3>
-        </div>
+            <div class="feature-card">
+                <div class="icon">👥</div>
+                <h3>Role-Based Access</h3>
+            </div>
 
-        <div class="feature-card">
-            <div class="icon">☁️</div>
-            <h3>Cloud Ready</h3>
-        </div>
+            <div class="feature-card">
+                <div class="icon">🕒</div>
+                <h3>Version Control</h3>
+            </div>
 
-        <div class="feature-card">
-            <div class="icon">🤝</div>
-            <h3>Team Collaboration</h3>
+            <div class="feature-card">
+                <div class="icon">☁️</div>
+                <h3>Cloud Ready</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🤝</div>
+                <h3>Team Collaboration</h3>
+            </div>
+
         </div>
 
     </div>
-
-</div>
+</sly>
