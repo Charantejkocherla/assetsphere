@@ -1,41 +1,44 @@
-<div class="categories">
+<sly data-sly-use.categoriesModel = "com.spheredigital.assetsphere.core.models.AssetCategoriesModel">
 
-    <h2>${properties.heading}</h2>
+    <div class="categories">
+        
+        <h2>${categoriesModel.getHeading}</h2>
 
-    <p>${properties.description}</p>
+        <p>${categoriesModel.getDescription}</p>
 
-    <div class="category-grid">
+        <div class="category-grid">
 
-        <div class="category-card">
-            <div class="icon">🖼️</div>
-            <h3>Images</h3>
-        </div>
+            <div class="category-card">
+                <div class="icon">🖼️</div>
+                <h3>Images</h3>
+            </div>
 
-        <div class="category-card">
-            <div class="icon">📄</div>
-            <h3>Documents</h3>
-        </div>
+            <div class="category-card">
+                <div class="icon">📄</div>
+                <h3>Documents</h3>
+            </div>
 
-        <div class="category-card">
-            <div class="icon">🎥</div>
-            <h3>Videos</h3>
-        </div>
+            <div class="category-card">
+                <div class="icon">🎥</div>
+                <h3>Videos</h3>
+            </div>
 
-        <div class="category-card">
-            <div class="icon">🎵</div>
-            <h3>Audio</h3>
-        </div>
+            <div class="category-card">
+                <div class="icon">🎵</div>
+                <h3>Audio</h3>
+            </div>
 
-        <div class="category-card">
-            <div class="icon">📊</div>
-            <h3>Spreadsheets</h3>
-        </div>
+            <div class="category-card">
+                <div class="icon">📊</div>
+                <h3>Spreadsheets</h3>
+            </div>
 
-        <div class="category-card">
-            <div class="icon">🗜️</div>
-            <h3>Archives</h3>
+            <div class="category-card">
+                <div class="icon">🗜️</div>
+                <h3>Archives</h3>
+            </div>
+
         </div>
 
     </div>
-
-</div>
+</sly>

@@ -1,17 +1,18 @@
-<div class="search-section">
+<sly data-sly-use.searchMod="com.spheredigital.assetsphere.core.models.SearchModel">
+	
+    <div class="search-section">
 
-    <h2>${properties.heading}</h2>
+        <h2>${searchMod.heading}</h2>
 
-    <p>${properties.description}</p>
+        <p>${searchMod.description}</p>
 
-    <div class="search-box">
+        <div class="search-box">
 
-        <input
-            type="text"
-            placeholder="${properties.placeholder}"/>
+            <input type="text" placeholder="${searchMod.placeholder}" />
 
-        <button>${properties.buttonText}</button>
+            <button>${searchMod.buttonText}</button>
+
+        </div>
 
     </div>
-
-</div>
+</sly>
